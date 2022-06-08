@@ -59,6 +59,15 @@ export default class App extends React.Component {
         })
       })
   }
+  toggleCompleted = id => {
+    axios.patch(`${URL}/${id}`)
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
   componentDidMount(){
     this.fetchAllTodos()
   }
